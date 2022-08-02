@@ -2,9 +2,13 @@ package main
 
 import (
 	"github.com/fatih/addlint/addcheck"
-	"golang.org/x/tools/go/analysis/singlechecker"
+	"github.com/fatih/addlint/stringcheck"
+	"golang.org/x/tools/go/analysis/multichecker"
 )
 
 func main() {
-	singlechecker.Main(addcheck.Analyzer)
+	multichecker.Main(
+		addcheck.Analyzer,
+		stringcheck.Analyzer,
+	)
 }
